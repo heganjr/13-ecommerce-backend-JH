@@ -3,7 +3,9 @@ const { ProductTag } = require('../models');
 const productTagData = [
   {
     product_id: 1,
+    // is referencing the product
     tag_id: 6,
+    // references the tag
   },
   {
     product_id: 1,
