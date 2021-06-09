@@ -11,16 +11,18 @@ Product.belongsTo(Category);
 Category.hasMany(Product);
 
 // Products belongToMany Tags (through ProductTag)
-Product.belongsToMany(ProductTag, {
-  through: "product_tag",
-  // foreignKey: "product_tag_id",
+Product.belongsToMany(Tag, {
+  through: ProductTag,
+  foreignKey: "product_id",
+  // 
 });
 // Dont have to do Foreign keys
 
 // Tags belongToMany Products (through ProductTag)
 Tag.belongsToMany(Product, {
-  through: "product_tag",
-  // foreignKey: "tag",
+  through: ProductTag,
+  foreignKey: "tag_id",
+  // Tag belongs to many Products through ProductTag - foreign keys
 });
 // Foreign Key setup
 
