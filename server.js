@@ -27,12 +27,12 @@ sequelize.sync().then(() => {
 // server is synced to Sequelize and SQL database - Done
 // Set up files (tags) in Insomnia.  
 // Open up GET routes in Insomnia Core for:
-//  -- categories
+//  -- categories - DONE
 //  -- products
 //  -- tags
 // ** Display All These Get Requests in JSON **
 // Test API in insomina:
-// -- POST
+// -- POST - Categories DONE
 // -- PUT
 //  -- DELETE
 // Create, update and delete data in the ecomerce_db
