@@ -78,21 +78,22 @@ router.put("/:id", async (req, res) => {
     res.status(500).json(err);
   }
   // update a category by its `id` value
+  // why is the 404 message not working for the put request when an ID that doesnt exist is requested?
 
 });
 
 router.delete("/:id", async (req, res) => {
   try {
-    const postCategory = await Category.create(req.params.id, {
-      include: [{ model: Product }],
+    const deleteCategory = await Category.destroy({
+      where: { id: req.params.id },
     });
 
-    if (!postCategory) {
+    if (!deleteCategory) {
       res.status(404).json({ message: "No category found with that id!" });
       return;
       //  I DONT WANT TO DO THE NEXT BIT!
     }
-    res.status(200).json(postCategory);
+    res.status(200).json(deleteCategory);
   } catch (err) {
     res.status(500).json(err);
   }
