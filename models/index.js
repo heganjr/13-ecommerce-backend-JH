@@ -17,14 +17,14 @@ Category.hasMany(Product, {
   foreignKey: "category_id",
   // Category has many products and it is linked to products via category_id
   // I am telling products that you will be an array with multiple objects!
-
+// THIS FOREIGN KEY REMOVED "categoryid" from showing in Products table
 });
 
 
 // Products belongToMany Tags (through ProductTag)
 Product.belongsToMany(Tag, {
   through: ProductTag,
-  foreignKey: "product_id",
+  foreignKey: "tag_id",
   // 
 });
 // Dont have to do Foreign keys
@@ -36,6 +36,7 @@ Tag.belongsToMany(Product, {
   // Tag belongs to many Products through ProductTag - foreign
 });
 // Foreign Key setup
+// COULD DELETE THESE FOREIGN KEYS IF NOT NEEDED
 
 module.exports = {
   Product,

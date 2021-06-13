@@ -13,6 +13,26 @@ ProductTag.init(
       primaryKey: true,
       autoIncrement: true,
     },
+
+    product_id: {
+      type: DataTypes.INTEGER,
+      references : {
+        model: "product",
+        key: "id"
+      }
+      
+    },
+    // Might not need this column defined
+
+     tag_id: {
+      type: DataTypes.INTEGER,
+      references : {
+        model: "tag",
+        key: "id"
+      }
+      // Might not need these!
+      
+    }
         
   },
   {
