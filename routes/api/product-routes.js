@@ -7,8 +7,9 @@ const { Product, Category, Tag, ProductTag } = require("../../models");
 router.get("/", async (req, res) => {
   try {
     const findAllProducts = await Product.findAll({
-      include: [{ model: Category, Tag }],
+      include: [{ model: Category }, { model: Tag, through: ProductTag }],
     });
+    // Tag model you need to place in another object
     res.status(200).json(findAllProducts);
   } catch (err) {
     res.status(500).json(err);
@@ -20,8 +21,8 @@ router.get("/", async (req, res) => {
 // get one product
 router.get("/:id", async (req, res) => {
   try {
-    const findProductById = await Product.findByPk(req.params.id,{
-      include: [{ model: Category, Tag }],
+    const findProductById = await Product.findByPk(req.params.id, {
+      include: [{ model: Category }, { model: Tag, through: ProductTag }],
     });
 
     if (!findProductById) {
@@ -39,7 +40,23 @@ router.get("/:id", async (req, res) => {
 });
 
 // create new product
-router.post("/", (req, res) => {
+router.post("/", async (req, res) => {
+  // try {
+  //   const postNewProduct = await Product.create({
+  //     product_name: req.body.product_name,
+  //     price: req.body.price,
+  //     stock: req.body.stock,
+  //     tags: req.body.tags,
+  //     // tag id can be associated to many tags ... in an array
+  //     category_id: req.body.category_id
+  //   });
+  //   res.status(200).json(postNewProduct);
+  // } catch (err) {
+  //   res.status(500).json(err);
+  // }
+  // create new product
+  // not sure if tag_id column/ foriegn key is working as expected
+
   /* req.body should look like this...
     {
       product_name: "Basketball",
@@ -56,9 +73,11 @@ router.post("/", (req, res) => {
           return {
             product_id: product.id,
             tag_id,
+            // map method creates product tags in order to associate the protuct to all of its tags
           };
         });
         return ProductTag.bulkCreate(productTagIdArr);
+        // allowed the bulk create of the product tags to allow for teh association
       }
       // if no product tags, just respond
       res.status(200).json(product);
@@ -69,6 +88,8 @@ router.post("/", (req, res) => {
       res.status(400).json(err);
     });
 });
+
+// WILL COME BACK TO THIS!
 
 // update product
 router.put("/:id", (req, res) => {
@@ -87,6 +108,7 @@ router.put("/:id", (req, res) => {
       const productTagIds = productTags.map(({ tag_id }) => tag_id);
       // create filtered list of new tag_ids
       const newProductTags = req.body.tagIds
+      // Have to tell what its associated to, with the tagIds ^^^
         .filter((tag_id) => !productTagIds.includes(tag_id))
         .map((tag_id) => {
           return {
@@ -107,12 +129,25 @@ router.put("/:id", (req, res) => {
     })
     .then((updatedProductTags) => res.json(updatedProductTags))
     .catch((err) => {
-      // console.log(err);
+      console.log(err);
       res.status(400).json(err);
     });
 });
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id", async (req, res) => {
+   try {
+     const deleteProduct = await Product.destroy({
+       where: { id: req.params.id },
+     });
+
+     if (!deleteProduct) {
+       res.status(404).json({ message: "No product found with that id!" });
+       return;
+     }
+     res.status(200).json(deleteProduct);
+   } catch (err) {
+     res.status(500).json(err);
+   }
   // delete one product by its `id` value
 });
 

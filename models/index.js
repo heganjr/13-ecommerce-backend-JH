@@ -7,6 +7,7 @@ const ProductTag = require("./ProductTag");
 // Products belongsTo Category
 Product.belongsTo(Category, {
   foreignKey: "category_id",
+  onDelete: "CASCADE"
   // entry point - Product belongs to Category and the category id is what links the two tables to each other
   // PRODUCT CAN ONLY BELONG TO ONE CATEGORY
 
@@ -24,9 +25,12 @@ Category.hasMany(Product, {
 // Products belongToMany Tags (through ProductTag)
 Product.belongsToMany(Tag, {
   through: ProductTag,
-  foreignKey: "tag_id",
+  foreignKey: "product_id",
   // 
 });
+// Have to do saame setup in include object in the routes
+
+// Product table is a mediator - Product associated to tags from the product_id
 // Dont have to do Foreign keys
 
 // Tags belongToMany Products (through ProductTag)

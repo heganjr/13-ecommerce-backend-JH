@@ -1,11 +1,11 @@
-# 12-MySQL-EmployeeTracker
+# 12-Object Relational Mapping- E-Commerce Backend
 by Jacob Hegan
 
 UWA Full-Flex Bootcamp February 2021
 
 [Video Walkthrough](https://drive.google.com/file/d/1N8ZWlif9l5wBm32CdxMpNeMvDN-seClf/view)
 
-[GitHub Repository](https://github.com/heganjr/11-mysql-employee-tracker-JH)
+[GitHub Repository](https://github.com/heganjr/13-ecommerce-backend-JH)
 
 ---
 
@@ -15,51 +15,92 @@ UWA Full-Flex Bootcamp February 2021
 
 ## Description
 
-To allow businesses a simple method to track employees, this application run through the terminal allows (at this current stage):
-
-- Add new employees (with department and role details)
-- Add new departments
-- Add new roles
-- Update employee salary
-- View existing employee, database and role's information
+To allow use of e-commerce technologies allowing companies to compete with other ecommerce companies
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Screenshots](#screenshot)
+- [How To Contribute](#how-to-contribute)
 - [Credits](#credits)
 - [License](#license)
 
 ## Installation
 
-- Upon cloning the repository inputting the command npm -i into the terminal within the directory of your local machine should install all dependencies.
+If cloning the repo locally:
 
-- 'npm start' within the file location in the terminal, will run the application
+npm i
+- to install all dependencies found in package.json
 
-- Follow the prompts to add, view or update information in the database
+- create a .env file with:
 
-- if you would like exisiting data to test the app. Please refer to the db/seed.sql folder and run this script in your MySQL Workbench.
+DB_USER='root'
+DB_PW='insert SQL password here
+DB_NAME='ecommerce_db'
 
-***Please Note: Some bonus features will be implemented in a following update***
+npm run seed
+- to push seed data to the ecommerce database
 
- * Update employee managers
-
-  - View employees by manager
-
-  - Delete departments, roles, and employees
-
-  - View the total utilised budget of a department
+npm start
+- to launch the server at https://localhost:3001
 
 
 ## Usage
 
 ```
-As a business owner
-I want to be able to view and manage the departments, roles, and employees in my company
-So that I can organize and plan my business
+AS A manager at an internet retail company
+I WANT a back end for my e-commerce website that uses the latest technologies
+SO THAT my company can compete with other e-commerce companies
+```
+
+---
+
+```
+GIVEN a functional Express.js API
+WHEN I add my database name, MySQL username, and MySQL password to an environment variable file
+THEN I am able to connect to a database using Sequelize
+WHEN I enter schema and seed commands
+THEN a development database is created and is seeded with test data
+WHEN I enter the command to invoke the application
+THEN my server is started and the Sequelize models are synced to the MySQL database
+WHEN I open API GET routes in Insomnia Core for categories, products, or tags
+THEN the data for each of these routes is displayed in a formatted JSON
+WHEN I test API POST, PUT, and DELETE routes in Insomnia Core
+THEN I am able to successfully create, update, and delete data in my database
 ```
 
 ### Screenshot
+
+[categoryFindAll.png](./images/categoryFindAll.png)
+
+[categoryFindByID.png](./images/categoryFindByID.png)
+
+[CategoryPost.png](./images/CategoryPost.png)
+
+[CategoryPut.png](./images/CategoryPut.png)
+
+[CategoryDelete.png](./images/CategoryDelete.png)
+
+[ProductFindAll.png](./images/ProductFindAll.png)
+
+[ProductFindByID.png](./images/ProductFindByID.png)
+
+[ProductPost.png](./images/ProductPost.png)
+
+[ProductPut.png](./images/ProductPut.png)
+
+[ProductDelete.png](./images/ProductDelete.png)
+
+[TagsFindAll.png](./images/TagsFindAll.png)
+
+[TagsFindByID.png](./images/TagsFindByID.png)
+
+[TagsPost.png](./images/TagsPost.png)
+
+[TagsPut.png](./images/TagsPut.png)
+
+[TagsDelete.png](./images/TagsDelete.png)
 
 
 
