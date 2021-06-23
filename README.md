@@ -3,7 +3,7 @@ by Jacob Hegan
 
 UWA Full-Flex Bootcamp February 2021
 
-[Video Walkthrough](https://drive.google.com/file/d/1N8ZWlif9l5wBm32CdxMpNeMvDN-seClf/view)
+[Video Walkthrough](https://drive.google.com/file/d/1kK9yaGGGg8kcI4hZ05Fh52eSw5hSJ-ia/view)
 
 [GitHub Repository](https://github.com/heganjr/13-ecommerce-backend-JH)
 
