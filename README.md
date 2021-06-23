@@ -72,35 +72,35 @@ THEN I am able to successfully create, update, and delete data in my database
 
 ### Screenshot
 
-[categoryFindAll.png](./images/categoryFindAll.png)
+![categoryFindAll.png](./images/categoryFindAll.png)
 
-[categoryFindByID.png](./images/categoryFindByID.png)
+![categoryFindByID.png](./images/categoryFindByID.png)
 
-[CategoryPost.png](./images/CategoryPost.png)
+![CategoryPost.png](./images/CategoryPost.png)
 
-[CategoryPut.png](./images/CategoryPut.png)
+![CategoryPut.png](./images/CategoryPut.png)
 
-[CategoryDelete.png](./images/CategoryDelete.png)
+![CategoryDelete.png](./images/CategoryDelete.png)
 
-[ProductFindAll.png](./images/ProductFindAll.png)
+![ProductFindAll.png](./images/ProductFindAll.png)
 
-[ProductFindByID.png](./images/ProductFindByID.png)
+![ProductFindByID.png](./images/ProductFindByID.png)
 
-[ProductPost.png](./images/ProductPost.png)
+![ProductPost.png](./images/ProductPost.png)
 
-[ProductPut.png](./images/ProductPut.png)
+![ProductPut.png](./images/ProductPut.png)
 
-[ProductDelete.png](./images/ProductDelete.png)
+![ProductDelete.png](./images/ProductDelete.png)
 
-[TagsFindAll.png](./images/TagsFindAll.png)
+![TagsFindAll.png](./images/TagsFindAll.png)
 
-[TagsFindByID.png](./images/TagsFindByID.png)
+![TagsFindByID.png](./images/TagsFindByID.png)
 
-[TagsPost.png](./images/TagsPost.png)
+![TagsPost.png](./images/TagsPost.png)
 
-[TagsPut.png](./images/TagsPut.png)
+![TagsPut.png](./images/TagsPut.png)
 
-[TagsDelete.png](./images/TagsDelete.png)
+![TagsDelete.png](./images/TagsDelete.png)
 
 
 
